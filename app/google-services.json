@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "756054618592",
+    "firebase_url": "https://animationdb-e1918-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "animationdb-e1918",
+    "storage_bucket": "animationdb-e1918.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756054618592:android:766d54fe256e72e1d4fb85",
+        "android_client_info": {
+          "package_name": "com.example.animationproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756054618592-tt5n6ip3fr0g9q1anfo65cmh8sei4jfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXt0ud66ACPdUNcGxHWPwaLnA4zzHIR0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756054618592-tt5n6ip3fr0g9q1anfo65cmh8sei4jfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756054618592:android:0374d427123f8248d4fb85",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756054618592-tt5n6ip3fr0g9q1anfo65cmh8sei4jfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXt0ud66ACPdUNcGxHWPwaLnA4zzHIR0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756054618592-tt5n6ip3fr0g9q1anfo65cmh8sei4jfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="registration">Регистрация</string>
+    <string name="email_hint">abc@gmail.com</string>
+    <string name="password_hint">Пароль</string>
+    <string name="create_user">Создать профиль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="nick_hint">КрУт0Й_НИК^^*~</string>
+    <string name="projectName">Название</string>
+</resources>

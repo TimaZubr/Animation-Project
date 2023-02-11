@@ -1,0 +1,625 @@
+@startuml
+class com.example.animationproject.databinding.SharingDialogBinding {
+- ConstraintLayout rootView
++ ImageButton deleteFrameDialog
++ ImageButton share
++ TextView tv
++ ConstraintLayout getRoot()
++ {static} SharingDialogBinding inflate(LayoutInflater)
++ {static} SharingDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} SharingDialogBinding bind(View)
+}
+class com.example.animationproject.databinding.MainlistItemBinding {
+- ConstraintLayout rootView
++ TextView projectNamePreview
++ ImageView projectPreview
++ ConstraintLayout getRoot()
++ {static} MainlistItemBinding inflate(LayoutInflater)
++ {static} MainlistItemBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} MainlistItemBinding bind(View)
+}
+class com.example.animationproject.AnimateGallery {
+- TextView name
+- EditText projectName
+- String prName
+- ArrayList<Element> elements
+- ArrayList<String> names
+- ElementAdapter adapter
+- ImageButton add
+- StorageReference storageReference
+- Uri uploadUri
+- DatabaseReference mDataBase
+- FirebaseUser user
+- int deletingElement
+- Dialog dialog
+- float fps
+# void onCreate(Bundle)
+- void init()
+- void isDBNeeded()
++ void onRefreshRV(View)
++ void onCancelGallery(View)
++ void onAddPhoto(View)
++ void onSaveToDB(View)
+- void initRecyclerView()
+- void initDialog()
+- void initDialogExit()
+- void initDialogSave()
++ byte[] generateGIF()
++ File saveGif()
+- File create()
++ boolean saveToDbElements()
+- void uploadImage(Bitmap,int)
+- void getDataFromDB()
+- void loaddata()
+- void getImage()
++ void onActivityResult(int,int,Intent)
++ void turnOffButtons()
++ void turnOnnButtons()
++ Bitmap getBitmapfromByteArray(byte[])
+}
+class com.example.animationproject.MainListAdapter {
+- LayoutInflater inflater
+- List<Element> projects
+- OnMainItemClickListener omicl
++ ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ViewHolder,int)
++ int getItemCount()
+}
+class com.example.animationproject.MainListAdapter.ViewHolder {
+~ ImageView projectView
+~ TextView projectName
+}
+interface com.example.animationproject.MainListAdapter.OnMainItemClickListener {
+~ void onItemClick(Element)
+~ void onLongItemClick(Element)
+}
+class com.example.animationproject.User {
+- String id
++ String getId()
++ void setId(String)
++ String getEmail()
++ void setEmail(String)
++ String getPassword()
++ void setPassword(String)
+}
+class com.example.animationproject.databinding.ListItemBinding {
+- ConstraintLayout rootView
++ ImageView img
++ ConstraintLayout getRoot()
++ {static} ListItemBinding inflate(LayoutInflater)
++ {static} ListItemBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ListItemBinding bind(View)
+}
+class com.example.animationproject.ElementAdapter {
+- LayoutInflater inflater
+- List<Element> elementList
+- OnElementClickListener oecl
++ ElementAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ElementAdapter.ViewHolder,int)
++ int getItemCount()
++ void onAttachedToRecyclerView(RecyclerView)
++ {static} Bitmap Bytes2Bitmap(byte[])
+}
+class com.example.animationproject.ElementAdapter.ViewHolder {
+~ ImageView frameView
+}
+interface com.example.animationproject.ElementAdapter.OnElementClickListener {
+~ void onLongElementClick(Element)
+}
+class com.example.animationproject.PaintView {
+- int colorEraser
+- int defaultBgColor
++ {static} float TOUCH_TOLERANCE
+- int BrushSize
++ int colorPen
+- int whatTool
+- float mX
+- Path mPath
+- Paint mPaint
+- int currentColor
+- {static} ArrayList<FingerPath> paths
+- ArrayList<FingerPath> bufPaths
+- Bitmap mBitmap
+- Bitmap oldFrame
+- Canvas mCanvas
+- Paint mBitmapPaint
+# void onDraw(Canvas)
++ void init(DisplayMetrics)
++ void pen()
++ void eraser()
++ void clear()
++ void back()
++ void forward()
+- void touchStart(float,float)
+- void touchMove(float,float)
+- void touchUp()
++ boolean onTouchEvent(MotionEvent)
++ void setBrushSize(int)
++ void setColorEraser(int)
++ int getDefaultBgColor()
++ void setDefaultBgColor(int)
++ void setOldFrame(Bitmap)
+}
+class com.example.animationproject.Element {
+- int position
+- String nameOfAnimation
+- String userEmail
+- String uriImg
+- Bitmap bmp
+- int bgColor
+- int activityType
++ int getBgColor()
++ void setBgColor(int)
++ int getActivityType()
++ void setActivityType(int)
++ int getPosition()
++ void setPosition(int)
++ String getNameOfAnimation()
++ void setNameOfAnimation(String)
++ String getUserEmail()
++ void setUserEmail(String)
++ Bitmap getBmp()
++ void setBmp(Bitmap)
++ String getUriImg()
++ void setUriImg(String)
+}
+class com.example.animationproject.databinding.ActivityAnimateGalleryBinding {
+- ConstraintLayout rootView
++ ImageButton add
++ ImageButton cancelGallery
++ RecyclerView imageList
++ TextView nameGalleryTV
++ EditText projectNameGallery
++ ImageButton refreshRV
++ ImageButton saveToDB
++ ConstraintLayout getRoot()
++ {static} ActivityAnimateGalleryBinding inflate(LayoutInflater)
++ {static} ActivityAnimateGalleryBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityAnimateGalleryBinding bind(View)
+}
+class com.example.animationproject.databinding.SavingAnimationDialogBinding {
+- ConstraintLayout rootView
++ ImageButton cancelSave
++ EditText fpsEditText
++ ImageButton saveAnimToDb
++ ImageButton saveAsGIF
++ TextView savingText
++ ImageButton share
++ ConstraintLayout getRoot()
++ {static} SavingAnimationDialogBinding inflate(LayoutInflater)
++ {static} SavingAnimationDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} SavingAnimationDialogBinding bind(View)
+}
+class com.example.animationproject.DrawPlace {
+- {static} ImageView canvasPreview
+- {static} FrameAdapter adapter
+- {static} PaintView paintView
+- ImageView forStart
+- String prName
+- int mDefaultColor
+- int currentFrame
+- Dialog dialog
+- float fps
+- ImageButton saveAsGif
+- EditText fpsEditText
+- StorageReference storageReference
+- Uri uploadUri
+- DatabaseReference mDataBase
+- FirebaseUser user
+- ArrayList<Element> elements
+# void onCreate(Bundle)
+- void init()
+- void isDBNeeded()
+- void initNewPaint()
+- void initRecyclerView()
+- void initDialogDelete()
+- void initDialogExit()
+- void initDialogSave()
++ void openColorPickerDialogue()
++ boolean saveToDbElements()
+- void uploadImage(Bitmap,int)
+- void loaddata()
++ void onClickBrush(View)
++ void onClickEraser(View)
++ void onClickBack(View)
++ void onClickForward(View)
++ void onClickDelete(View)
++ void onClickAddFrame(View)
++ void onClickSaveGIF(View)
++ void onClickExit(View)
++ void onClickPickColor(View)
++ byte[] generateGIF()
++ File saveGif()
++ {static} File create(String)
++ {static} Bitmap viewToBitmap(View)
++ Bitmap getBitmapfromByteArray(byte[])
+- void turnOnnButtons()
+- void turnOffButtons()
++ {static} ImageView getCanvasPreview()
+}
+class com.example.animationproject.AnimatedGifEncoder {
+# int width
+# int height
+# int x
+# int y
+# int transparent
+# int transIndex
+# int repeat
+# int delay
+# boolean started
+# OutputStream out
+# Bitmap image
+# byte[] pixels
+# byte[] indexedPixels
+# int colorDepth
+# byte[] colorTab
+# boolean[] usedEntry
+# int palSize
+# int dispose
+# boolean closeStream
+# boolean firstFrame
+# boolean sizeSet
+# int sample
++ void setDelay(int)
++ void setDispose(int)
++ void setRepeat(int)
++ void setTransparent(int)
++ boolean addFrame(Bitmap)
++ boolean finish()
++ void setFrameRate(float)
++ void setQuality(int)
++ void setSize(int,int)
++ void setPosition(int,int)
++ boolean start(OutputStream)
+# void analyzePixels()
+# int findClosest(int)
+# void getImagePixels()
+# int[] getImageData(Bitmap)
+# void writeGraphicCtrlExt()
+# void writeImageDesc()
+# void writeLSD()
+# void writeNetscapeExt()
+# void writePalette()
+# void writePixels()
+# void writeShort(int)
+# void writeString(String)
+}
+class com.example.animationproject.NeuQuant {
+# {static} int netsize
+# {static} int prime1
+# {static} int prime2
+# {static} int prime3
+# {static} int prime4
+# {static} int minpicturebytes
+# {static} int maxnetpos
+# {static} int netbiasshift
+# {static} int ncycles
+# {static} int intbiasshift
+# {static} int intbias
+# {static} int gammashift
+# {static} int gamma
+# {static} int betashift
+# {static} int beta
+# {static} int betagamma
+# {static} int initrad
+# {static} int radiusbiasshift
+# {static} int radiusbias
+# {static} int initradius
+# {static} int radiusdec
+# {static} int alphabiasshift
+# {static} int initalpha
+# int alphadec
+# {static} int radbiasshift
+# {static} int radbias
+# {static} int alpharadbshift
+# {static} int alpharadbias
+# byte[] thepicture
+# int lengthcount
+# int samplefac
+# int[][] network
+# int[] netindex
+# int[] bias
+# int[] freq
+# int[] radpower
++ byte[] colorMap()
++ void inxbuild()
++ void learn()
++ int map(int,int,int)
++ byte[] process()
++ void unbiasnet()
+# void alterneigh(int,int,int,int,int)
+# void altersingle(int,int,int,int,int)
+# int contest(int,int,int)
+}
+class com.example.animationproject.LZWEncoder {
+- {static} int EOF
+- int imgW
+- byte[] pixAry
+- int initCodeSize
+- int remaining
+- int curPixel
+~ {static} int BITS
+~ {static} int HSIZE
+~ int n_bits
+~ int maxbits
+~ int maxcode
+~ int maxmaxcode
+~ int[] htab
+~ int[] codetab
+~ int hsize
+~ int free_ent
+~ boolean clear_flg
+~ int g_init_bits
+~ int ClearCode
+~ int EOFCode
+~ int cur_accum
+~ int cur_bits
+~ int[] masks
+~ int a_count
+~ byte[] accum
+~ void char_out(byte,OutputStream)
+~ void cl_block(OutputStream)
+~ void cl_hash(int)
+~ void compress(int,OutputStream)
+~ void encode(OutputStream)
+~ void flush_char(OutputStream)
+~ int MAXCODE(int)
+- int nextPixel()
+~ void output(int,OutputStream)
+}
+class com.example.animationproject.databinding.FrameBinding {
+- ConstraintLayout rootView
++ ImageView imageFrame
++ ConstraintLayout getRoot()
++ {static} FrameBinding inflate(LayoutInflater)
++ {static} FrameBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} FrameBinding bind(View)
+}
+class com.example.animationproject.databinding.ActivityLoginBinding {
+- ConstraintLayout rootView
++ ImageButton LogIn
++ ImageButton bOut
++ ImageButton bStart
++ EditText email
++ ImageView imageView
++ EditText password
++ ImageButton reg
++ TextView senVer
++ TextView tvStart
++ ConstraintLayout getRoot()
++ {static} ActivityLoginBinding inflate(LayoutInflater)
++ {static} ActivityLoginBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityLoginBinding bind(View)
+}
+class com.example.animationproject.LoginActivity {
+- EditText email
+- ImageButton login
+- TextView tvStart
+- String emailStr
+- FirebaseAuth mAuth
+- FirebaseUser user
+# void onCreate(Bundle)
+- void init()
++ void onClickRegister(View)
++ void onClickLogin(View)
++ void onClickStart(View)
++ void onClickSignOut(View)
++ void onClickSendVerification(View)
+# void onStart()
+- void sendEmailVer()
+}
+class com.example.animationproject.FingerPath {
+- int color
+- int strokeWidth
+- Path path
++ int getColor()
++ int getStrokeWidth()
++ Path getPath()
++ void setColor(int)
++ void setStrokeWidth(int)
++ void setPath(Path)
+}
+class com.example.animationproject.databinding.DeleteDialogBinding {
+- ConstraintLayout rootView
++ ImageButton cancelDialog
++ ImageButton deleteFrameDialog
++ TextView textDialog
++ ConstraintLayout getRoot()
++ {static} DeleteDialogBinding inflate(LayoutInflater)
++ {static} DeleteDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} DeleteDialogBinding bind(View)
+}
+class com.example.animationproject.MainActivity {
++ {static} int IDM_LOGOUT
++ {static} int IDM_EXIT
+- int mDefaultColor
+~ View viewColor
+- Dialog dialog
+- String deletingElement
+- EditText search
+- String filter
+- MainListAdapter adapter
+- ArrayList<Element> elements
+- ArrayList<String> names
+- StorageReference storageReference
+- DatabaseReference mDataBase
+- FirebaseUser user
+# void onCreate(Bundle)
+- void init()
+- void initRecyclerView()
+- void initDialogDelete()
+- void initDialogoSocMedia()
+- void initDialogAdd()
++ void openColorPickerDialogue()
++ void onCreateContextMenu(ContextMenu,View,ContextMenu.ContextMenuInfo)
++ boolean onContextItemSelected(MenuItem)
++ void onExit(View)
++ void onAddNewProject(View)
++ void onClickInfo(View)
++ void onRefresh(View)
+- void getDataFromDB()
+}
+class com.example.animationproject.RegisterActivity {
+- EditText email
+- DatabaseReference mDataBase
+- FirebaseAuth mAuth
+~ Dialog regQuestion
+# void onCreate(Bundle)
++ void onClickCreateUser(View)
++ void onClickRegQuestion(View)
+- void sendEmailVer()
+}
+class com.example.animationproject.databinding.AuthorDialogBinding {
+- ConstraintLayout rootView
++ ImageButton github
++ ImageButton inst
++ TextView text
++ TextView textView2
++ TextView textView3
++ ImageButton vk
++ ConstraintLayout getRoot()
++ {static} AuthorDialogBinding inflate(LayoutInflater)
++ {static} AuthorDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} AuthorDialogBinding bind(View)
+}
+class com.example.animationproject.databinding.ActivityDrawPlaceBinding {
+- ConstraintLayout rootView
++ ImageView addFrame
++ ImageButton back
++ ImageButton backToMenu
++ ImageButton brush
++ SeekBar brushSize
++ ImageView canvasPreview
++ ImageButton colorPreview
++ ConstraintLayout constraintLayout
++ ImageButton delete
++ ImageButton eraser
++ ImageView forStart
++ ImageButton forward
++ RecyclerView listOfFrames
++ PaintView paintView2
++ ImageButton save
++ ConstraintLayout getRoot()
++ {static} ActivityDrawPlaceBinding inflate(LayoutInflater)
++ {static} ActivityDrawPlaceBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityDrawPlaceBinding bind(View)
+}
+class com.example.animationproject.databinding.ActivityMainBinding {
+- ConstraintLayout rootView
++ ImageButton addClip
++ RecyclerView allProjects
++ ImageButton exitApp
++ ImageButton info
++ ImageButton refresh
++ EditText searchProjects
++ ConstraintLayout getRoot()
++ {static} ActivityMainBinding inflate(LayoutInflater)
++ {static} ActivityMainBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityMainBinding bind(View)
+}
+class com.example.animationproject.databinding.ActivityRegisterBinding {
+- ConstraintLayout rootView
++ ImageButton create
++ EditText emailReg
++ ImageView imageView
++ EditText passwordReg
++ EditText passwordReg2
++ TextView senVer2
++ ConstraintLayout getRoot()
++ {static} ActivityRegisterBinding inflate(LayoutInflater)
++ {static} ActivityRegisterBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityRegisterBinding bind(View)
+}
+class com.example.animationproject.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class com.example.animationproject.FrameAdapter {
+- LayoutInflater inflater
+- List<Element> elements
+- OnFrameClickListener ofcl
++ FrameAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(FrameAdapter.ViewHolder,int)
++ int getItemCount()
+}
+class com.example.animationproject.FrameAdapter.ViewHolder {
+~ ImageView frameView
+}
+interface com.example.animationproject.FrameAdapter.OnFrameClickListener {
+~ void onFrameClick(Element)
+~ void onLongFrameClick(Element)
+}
+class com.example.animationproject.databinding.ExitDialogBinding {
+- ConstraintLayout rootView
++ ImageButton cancelDialogExit
++ ImageButton exitToMenuDialog
++ TextView textDialog
++ TextView textView
++ ConstraintLayout getRoot()
++ {static} ExitDialogBinding inflate(LayoutInflater)
++ {static} ExitDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ExitDialogBinding bind(View)
+}
+class com.example.animationproject.databinding.RegQuestionBinding {
+- ConstraintLayout rootView
++ TextView tv0
++ TextView tv1
++ TextView tv2
++ TextView tv3
++ ConstraintLayout getRoot()
++ {static} RegQuestionBinding inflate(LayoutInflater)
++ {static} RegQuestionBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} RegQuestionBinding bind(View)
+}
+class com.example.animationproject.databinding.AddingProjectDialogBinding {
+- ConstraintLayout rootView
++ ImageButton cancelAdding
++ ImageButton chooseBg
++ EditText projectName
++ ImageButton startDraw
++ ImageButton startFromGallery
++ View view
++ ConstraintLayout getRoot()
++ {static} AddingProjectDialogBinding inflate(LayoutInflater)
++ {static} AddingProjectDialogBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} AddingProjectDialogBinding bind(View)
+}
+
+
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.SharingDialogBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.MainlistItemBinding
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.AnimateGallery
+com.example.animationproject.Adapter <|-- com.example.animationproject.MainListAdapter
+com.example.animationproject.MainListAdapter +.. com.example.animationproject.MainListAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.MainListAdapter.ViewHolder
+com.example.animationproject.MainListAdapter +.. com.example.animationproject.MainListAdapter.OnMainItemClickListener
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ListItemBinding
+com.example.animationproject.Adapter <|-- com.example.animationproject.ElementAdapter
+com.example.animationproject.ElementAdapter +.. com.example.animationproject.ElementAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.ElementAdapter.ViewHolder
+com.example.animationproject.ElementAdapter +.. com.example.animationproject.ElementAdapter.OnElementClickListener
+android.view.View <|-- com.example.animationproject.PaintView
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ActivityAnimateGalleryBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.SavingAnimationDialogBinding
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.DrawPlace
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.FrameBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ActivityLoginBinding
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.LoginActivity
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.DeleteDialogBinding
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.RegisterActivity
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.AuthorDialogBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ActivityDrawPlaceBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ActivityMainBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ActivityRegisterBinding
+com.example.animationproject.Adapter <|-- com.example.animationproject.FrameAdapter
+com.example.animationproject.FrameAdapter +.. com.example.animationproject.FrameAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.FrameAdapter.ViewHolder
+com.example.animationproject.FrameAdapter +.. com.example.animationproject.FrameAdapter.OnFrameClickListener
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.ExitDialogBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.RegQuestionBinding
+androidx.viewbinding.ViewBinding <|.. com.example.animationproject.databinding.AddingProjectDialogBinding
+@enduml

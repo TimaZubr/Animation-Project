@@ -1,0 +1,248 @@
+@startuml
+class com.example.animationproject.LoginActivity {
+- EditText email
+- ImageButton login
+- TextView tvStart
+- String emailStr
+- FirebaseAuth mAuth
+- FirebaseUser user
+}
+class com.example.animationproject.FingerPath {
+- int color
+- int strokeWidth
+- Path path
+}
+class com.example.animationproject.AnimateGallery {
+- TextView name
+- EditText projectName
+- String prName
+- ArrayList<Element> elements
+- ArrayList<String> names
+- ElementAdapter adapter
+- ImageButton add
+- StorageReference storageReference
+- Uri uploadUri
+- DatabaseReference mDataBase
+- FirebaseUser user
+- int deletingElement
+- Dialog dialog
+- float fps
+}
+class com.example.animationproject.MainActivity {
++ {static} int IDM_LOGOUT
++ {static} int IDM_EXIT
+- int mDefaultColor
+~ View viewColor
+- Dialog dialog
+- String deletingElement
+- EditText search
+- String filter
+- MainListAdapter adapter
+- ArrayList<Element> elements
+- ArrayList<String> names
+- StorageReference storageReference
+- DatabaseReference mDataBase
+- FirebaseUser user
+}
+class com.example.animationproject.MainListAdapter {
+- LayoutInflater inflater
+- List<Element> projects
+- OnMainItemClickListener omicl
+}
+class com.example.animationproject.MainListAdapter.ViewHolder {
+~ ImageView projectView
+~ TextView projectName
+}
+interface com.example.animationproject.MainListAdapter.OnMainItemClickListener {
+}
+class com.example.animationproject.User {
+- String id
+}
+class com.example.animationproject.ElementAdapter {
+- LayoutInflater inflater
+- List<Element> elementList
+- OnElementClickListener oecl
+}
+class com.example.animationproject.ElementAdapter.ViewHolder {
+~ ImageView frameView
+}
+interface com.example.animationproject.ElementAdapter.OnElementClickListener {
+}
+class com.example.animationproject.PaintView {
+- int colorEraser
+- int defaultBgColor
++ {static} float TOUCH_TOLERANCE
+- int BrushSize
++ int colorPen
+- int whatTool
+- float mX
+- Path mPath
+- Paint mPaint
+- int currentColor
+- {static} ArrayList<FingerPath> paths
+- ArrayList<FingerPath> bufPaths
+- Bitmap mBitmap
+- Bitmap oldFrame
+- Canvas mCanvas
+- Paint mBitmapPaint
+}
+class com.example.animationproject.RegisterActivity {
+- EditText email
+- DatabaseReference mDataBase
+- FirebaseAuth mAuth
+~ Dialog regQuestion
+}
+class com.example.animationproject.Element {
+- int position
+- String nameOfAnimation
+- String userEmail
+- String uriImg
+- Bitmap bmp
+- int bgColor
+- int activityType
+}
+class com.example.animationproject.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class com.example.animationproject.FrameAdapter {
+- LayoutInflater inflater
+- List<Element> elements
+- OnFrameClickListener ofcl
+}
+class com.example.animationproject.FrameAdapter.ViewHolder {
+~ ImageView frameView
+}
+interface com.example.animationproject.FrameAdapter.OnFrameClickListener {
+}
+class com.example.animationproject.DrawPlace {
+- {static} ImageView canvasPreview
+- {static} FrameAdapter adapter
+- {static} PaintView paintView
+- ImageView forStart
+- String prName
+- int mDefaultColor
+- int currentFrame
+- Dialog dialog
+- float fps
+- ImageButton saveAsGif
+- EditText fpsEditText
+- StorageReference storageReference
+- Uri uploadUri
+- DatabaseReference mDataBase
+- FirebaseUser user
+- ArrayList<Element> elements
+}
+class com.example.animationproject.AnimatedGifEncoder {
+# int width
+# int height
+# int x
+# int y
+# int transparent
+# int transIndex
+# int repeat
+# int delay
+# boolean started
+# OutputStream out
+# Bitmap image
+# byte[] pixels
+# byte[] indexedPixels
+# int colorDepth
+# byte[] colorTab
+# boolean[] usedEntry
+# int palSize
+# int dispose
+# boolean closeStream
+# boolean firstFrame
+# boolean sizeSet
+# int sample
+}
+class com.example.animationproject.NeuQuant {
+# {static} int netsize
+# {static} int prime1
+# {static} int prime2
+# {static} int prime3
+# {static} int prime4
+# {static} int minpicturebytes
+# {static} int maxnetpos
+# {static} int netbiasshift
+# {static} int ncycles
+# {static} int intbiasshift
+# {static} int intbias
+# {static} int gammashift
+# {static} int gamma
+# {static} int betashift
+# {static} int beta
+# {static} int betagamma
+# {static} int initrad
+# {static} int radiusbiasshift
+# {static} int radiusbias
+# {static} int initradius
+# {static} int radiusdec
+# {static} int alphabiasshift
+# {static} int initalpha
+# int alphadec
+# {static} int radbiasshift
+# {static} int radbias
+# {static} int alpharadbshift
+# {static} int alpharadbias
+# byte[] thepicture
+# int lengthcount
+# int samplefac
+# int[][] network
+# int[] netindex
+# int[] bias
+# int[] freq
+# int[] radpower
+}
+class com.example.animationproject.LZWEncoder {
+- {static} int EOF
+- int imgW
+- byte[] pixAry
+- int initCodeSize
+- int remaining
+- int curPixel
+~ {static} int BITS
+~ {static} int HSIZE
+~ int n_bits
+~ int maxbits
+~ int maxcode
+~ int maxmaxcode
+~ int[] htab
+~ int[] codetab
+~ int hsize
+~ int free_ent
+~ boolean clear_flg
+~ int g_init_bits
+~ int ClearCode
+~ int EOFCode
+~ int cur_accum
+~ int cur_bits
+~ int[] masks
+~ int a_count
+~ byte[] accum
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.LoginActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.AnimateGallery
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.MainActivity
+com.example.animationproject.Adapter <|-- com.example.animationproject.MainListAdapter
+com.example.animationproject.MainListAdapter +.. com.example.animationproject.MainListAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.MainListAdapter.ViewHolder
+com.example.animationproject.MainListAdapter +.. com.example.animationproject.MainListAdapter.OnMainItemClickListener
+com.example.animationproject.Adapter <|-- com.example.animationproject.ElementAdapter
+com.example.animationproject.ElementAdapter +.. com.example.animationproject.ElementAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.ElementAdapter.ViewHolder
+com.example.animationproject.ElementAdapter +.. com.example.animationproject.ElementAdapter.OnElementClickListener
+android.view.View <|-- com.example.animationproject.PaintView
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.RegisterActivity
+com.example.animationproject.Adapter <|-- com.example.animationproject.FrameAdapter
+com.example.animationproject.FrameAdapter +.. com.example.animationproject.FrameAdapter.ViewHolder
+com.example.animationproject.ViewHolder <|-- com.example.animationproject.FrameAdapter.ViewHolder
+com.example.animationproject.FrameAdapter +.. com.example.animationproject.FrameAdapter.OnFrameClickListener
+androidx.appcompat.app.AppCompatActivity <|-- com.example.animationproject.DrawPlace
+@enduml

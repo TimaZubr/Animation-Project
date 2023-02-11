@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.132" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/bg_progress.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/custom_input.xml" value="0.1025" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/custom_seekbar.xml" value="0.2595" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/dialog_preview.xml" value="0.2595" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/edit_text_figma.xml" value="0.2555" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/ic_back.xml" value="0.1025" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/preview.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/rectangle_1.xml" value="0.1025" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/rectangle_2.xml" value="0.2555" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/drawable/rounded_button.xml" value="0.2555" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-land/activity_main.xml" value="0.21516754850088182" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-land/layout.xml" value="0.2" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-large/activity_animate_gallery.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-large/activity_main.xml" value="0.4" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-normal/activity_animate_gallery.xml" value="0.152" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-normal/activity_main.xml" value="0.2" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-normal/reg_question.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-normal/sharing_dialog.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-small/activity_animate_gallery.xml" value="0.8" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout-small/activity_main.xml" value="0.8" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/activity_animate_gallery.xml" value="0.2" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/activity_draw_place.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/adding_project_dialog.xml" value="0.152" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/author_dialog.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/canvas_layout.xml" value="0.12783318223028106" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/delete_dialog.xml" value="0.2" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/exit_dialog.xml" value="0.152" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/fragment_adding_project.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/fragment_animate_from_gallery.xml" value="0.176" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/fragment_empty.xml" value="0.152" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/fragment_saving_animation.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/fragment_social_network.xml" value="0.2" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/frame.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/layout.xml" value="0.1" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/list_item.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/mainlist_item.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/reg_question.xml" value="0.4" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/saving_animation_dialog.xml" value="0.264" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/layout/sharing_dialog.xml" value="0.176" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/menu/search_menu.xml" value="0.20863616930312098" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.132" />
+        <entry key="..\:/STUDYYY/AnimationProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.132" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

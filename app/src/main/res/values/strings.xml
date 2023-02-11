@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AnimationProject</string>
+    <string name="add">+</string>
+    <string name="i">i</string>
+    <string name="threePoint">...</string>
+    <string name="vk_app_id">4542602</string>
+    <string name="let_s_animate">Let\'s Animate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="brush">brush</string>
+    <string name="color_preview">color_preview</string>
+    <string name="delete">delete</string>
+    <string name="forward">forward</string>
+    <string name="back">back</string>
+    <string name="eraser">eraser</string>
+    <string name="save">save</string>
+    <string name="log_in">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="email_hint">abc@gmail.com</string>
+    <string name="password_hint">Пароль</string>
+    <string name="create_user">Создать профиль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="nick_hint">КрУт0Й_НИК^^*~</string>
+    <string name="projectName">Название</string>
+    <string name="saving">Сохранение</string>
+</resources>
